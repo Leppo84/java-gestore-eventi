@@ -1,6 +1,8 @@
 package gestore.eventi;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
@@ -68,7 +70,14 @@ public class Main {
 		
 		System.out.println("L'evento "  + test1.getTitolo() + " ha " + test1.getPostiPrenotati() + " posti prenotati e " + (test1.getPostiTotali() - test1.getPostiPrenotati()) + " posti ancora disponibili.");
 		
-
+		
+		System.out.println("Stasera c'è un corcerto!");
+		
+		LocalTime oraDefault =  LocalTime.of(10, 10);
+		BigDecimal prezzoDefault = new BigDecimal (12.50);
+		Concerto test2 = new Concerto( 20, oraDefault, prezzoDefault);
+		
+		System.out.println(test2.toString());
 		
 		
 		
