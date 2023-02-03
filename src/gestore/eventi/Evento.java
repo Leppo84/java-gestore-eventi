@@ -1,11 +1,11 @@
-package gestre.eventi;
+package gestore.eventi;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class Evento {
-	private int code = 0;
+	static int code = 0;
 	private String titolo;
 	private LocalDate data;
 	private int postiTotali;
@@ -13,11 +13,11 @@ public class Evento {
 //	private int postiRichiesti;
 	
 	
-	public Evento() {
+	public Evento(int postiTotali) {
 		super();
-		this.titolo = "titolo"+code;
+		this.titolo = "Default "+code;
 		this.data = LocalDate.of(2023, 3, 2+code);
-		this.postiTotali = 30;
+		this.postiTotali = postiTotali;
 		this.postiPrenotati = 0;
 		code =+1;
 	}
