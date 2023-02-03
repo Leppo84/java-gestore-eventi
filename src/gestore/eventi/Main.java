@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		String userInput;
+//		String userInput;
 		int yyyy;
 		int mm;
 		int gg;
@@ -19,6 +19,7 @@ public class Main {
 		System.out.println("Stai creando un nuovo evento.");
 		System.out.println("inserire il numero di posti disponibili all'evento: ");
 		Evento test1 = new Evento(scan.nextInt());
+		scan.nextLine();  // elimima il salto
 		
 		System.out.println("inserire nome evento: ");
 		test1.setTitolo(scan.nextLine());
@@ -35,7 +36,21 @@ public class Main {
 		gg = scan.nextInt();
 		
 		d = LocalDate.of(yyyy, gg, mm);
-		test1.setData(d);
+		try {
+			if (yyyy < 2023) {
+				System.out.println("L'anno non è corretto. ");
+		}
+		else if (0 > mm | mm > 12) {
+			System.out.println("Il mese non è corretto. ");
+		}
+		else if (gg > 31) {
+			System.out.println("Il mese non è corretto. ");
+		}
+			test1.setData(d);			
+		} catch (Exception e) {
+			System.out.println("Errore sulla data. " +e.getMessage());
+			System.out.println("Verrà inserita la data odierna.");
+		}
 		
 		System.out.println("Nuovo evento "+ test1.toString());
 		

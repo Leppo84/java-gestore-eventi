@@ -64,8 +64,15 @@ public class Evento {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setData(LocalDate data) throws Exception {
+		LocalDate oggi = LocalDate.now();
+		
+//		Gestire date impossibili
+		
+		if (data.isBefore(oggi)) {
+			throw new Exception("Non è possibile inserire date precedenti. ");
+		}	
+		else this.data = data;
 	}
 
 	public int getPostiTotali() {
