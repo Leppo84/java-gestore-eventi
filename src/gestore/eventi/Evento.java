@@ -24,10 +24,12 @@ public class Evento {
 	
 //	da implementare exception e verifica tipo di dato
 	
-	public void Prenota (int postiRichiesti) {
+	public void prenota (int postiRichiesti) {
 		if (postiRichiesti > 0 | postiRichiesti <= postiTotali-postiPrenotati) {
 			this.postiPrenotati = this.postiPrenotati+postiRichiesti;
-			System.out.println("Prenotazione effettuata");
+			System.out.println("Prenotazione di " + postiRichiesti + " posti effettuata.");
+			System.out.println("Sono disponibili ancora " + (postiTotali-postiPrenotati) + " posti liberi");
+			
 		}
 		else {
 			System.out.println("Operazione non riuscita");
@@ -37,7 +39,7 @@ public class Evento {
 	public void disdici (int postiCancellati) {
 		if (postiCancellati > 0 | postiCancellati <= postiPrenotati) {
 			this.postiPrenotati = this.postiPrenotati-postiCancellati;
-			System.out.println("Prenotazione cancellata con successo");
+			System.out.println("Cancellazione di " + postiCancellati + " posti prenotati avvenuta con successo");
 		}
 		else {
 			System.out.println("Operazione non riuscita");
