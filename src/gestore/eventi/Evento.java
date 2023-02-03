@@ -13,11 +13,15 @@ public class Evento {
 //	private int postiRichiesti;
 	
 	
-	public Evento(int postiTotali) {
+	public Evento(int postiTotali) throws Exception {
 		super();
 		this.titolo = "Default "+code;
 		this.data = LocalDate.of(2023, 3, 2+code);
-		this.postiTotali = postiTotali;
+		if (postiTotali >= 0) {
+			this.postiTotali = postiTotali; }
+		else {
+			throw new Exception("Prego nserire un numero intero non negativo.");
+		}	
 		this.postiPrenotati = 0;
 		code =+1;
 	}

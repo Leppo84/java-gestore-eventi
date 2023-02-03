@@ -9,7 +9,6 @@ public class Main {
 
 	public static void main(String[] args) {
 
-//		String userInput;
 		int yyyy;
 		int mm;
 		int gg;
@@ -20,8 +19,17 @@ public class Main {
 //		userInput = scan.nextLine();
 
 		System.out.println("Stai creando un nuovo evento.");
-		System.out.println("inserire il numero di posti disponibili all'evento: ");
-		Evento test1 = new Evento(scan.nextInt());
+			System.out.println("inserire il numero di posti disponibili all'evento: ");
+			posti = (scan.nextInt());
+			Evento test1 = new Evento(posti);
+
+//			try {
+//			}
+//				
+//			 catch (Exception e) {
+//				System.out.println("Errore sui posti disponibili. " +e.getMessage());
+//				System.out.println("Inserire un numero intero non negativo.");
+//			}
 		scan.nextLine();  // elimima il salto
 		
 		System.out.println("inserire nome evento: ");
